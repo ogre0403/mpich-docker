@@ -17,7 +17,7 @@ function populate_machine() {
    for var in `( set -o posix ; set ) | grep _SERVICE_NAME`; do
       NAME=${var%"="*}
       VALUE=${var#*"="}
-      echo ${VALUE}.service.consul >> ${MACHINEFILE}
+      echo ${VALUE} >> ${MACHINEFILE}
       COUNT=`expr $COUNT + 1`	
    done
 
